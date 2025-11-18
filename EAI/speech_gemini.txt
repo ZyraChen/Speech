@@ -1,0 +1,146 @@
+{
+  "plan": [
+    {
+      "slide": 1,
+      "title": "Cover Page: Introduction",
+      "duration": "30 seconds",
+      "content": "Welcome the audience, introduce the speaker (Zhaoqun Li), the joint lab, and the main topic: Advancing LLM fact-checking using Argumentative Reasoning."
+    },
+    {
+      "slide": 2,
+      "title": "Background: The Problem & Urgency",
+      "duration": "60 seconds",
+      "content": "Establish the core problem (LLM 'hallucinations') and its societal urgency. Introduce the 'dual role' paradox: LLMs are both the problem and a potential part of the solution for sub-tasks."
+    },
+    {
+      "slide": 3,
+      "title": "Motivation: Existing Frameworks",
+      "duration": "60 seconds",
+      "content": "Define the scope of the research: not solving hallucination itself, but conducting online fact-checking. Briefly explain the standard tool-augmented pipeline (like FacTool) as the starting point."
+    },
+    {
+      "slide": 4,
+      "title": "Example 1: The Benefit of Web Search (Correction)",
+      "duration": "45 seconds",
+      "content": "Show a clear before-and-after example (Andy Lau / EMNLP). A base LLM fails, while a web-augmented LLM provides correct, sourced answers."
+    },
+    {
+      "slide": 5,
+      "title": "Example 2: The Benefit of Web Search (Nuance)",
+      "duration": "60 seconds",
+      "content": "Demonstrate a more complex case (Cheng Li). Show how web search helps handle nuanced, dynamic facts that aren't simple yes/no answers, by synthesizing multiple sources."
+    },
+    {
+      "slide": 6,
+      "title": "Example 3: The Benefit of Web Search (Value-Add)",
+      "duration": "45 seconds",
+      "content": "Show a third benefit: enrichment. The model not only verifies a user's fact but adds new, relevant, supplementary information."
+    },
+    {
+      "slide": 7,
+      "title": "The Pivot: Why Simple Web Search is Not Enough",
+      "duration": "75 seconds",
+      "content": "Introduce the core research gap. Pivot from the benefits of search to its critical *failures*: Niche info, Dynamic (outdated) info, Low-quality content, and most importantly, Conflicting information."
+    },
+    {
+      "slide": 8,
+      "title": "Our Research Questions",
+      "duration": "60 seconds",
+      "content": "Formalize the problems from the previous slide into specific Research Questions (RQs): How to integrate multi-source data? How to use it to correct hallucinations? How to design interpretable metrics?"
+    },
+    {
+      "slide": 9,
+      "title": "Our Solution: The Argumentation Pipeline (Overview)",
+      "duration": "60 seconds",
+      "content": "Present the high-level diagram of the proposed solution. Use the 'Cheng Li' example again to show how a conflicting 'Evidence Pool' is fed into an 'Argumentation System' to get a verified answer."
+    },
+    {
+      "slide": 10,
+      "title": "Method - Step 1: Evidence Gathering",
+      "duration": "60 seconds",
+      "content": "Detail the first part of the method. Explain the 'Pro-Agent' and 'Con-Agent' concept, which uses an iterative, adversarial process to build a comprehensive evidence pool."
+    },
+    {
+      "slide": 11,
+      "title": "Method - Step 2: The Argumentation System",
+      "duration": "75 seconds",
+      "content": "Explain the core of the method. Show how the 5 conflicting pieces of evidence are modeled as arguments with *priorities*. Explain the concept of 'attacks' and how the system selects 'accepted' (red) arguments."
+    },
+    {
+      "slide": 12,
+      "title": "Method - Step 3: Explanation Generation",
+      "duration": "60 seconds",
+      "content": "Show the final output. The system doesn't just say 'true' or 'false.' It generates a natural language explanation *based on* the winning arguments, making the process transparent and trustworthy."
+    },
+    {
+      "slide": 13,
+      "title": "Future Plan",
+      "duration": "30 seconds",
+      "content": "Briefly outline the next steps: 1. Building a new, complex benchmark dataset. 2. Refining the algorithms based on that dataset."
+    },
+    {
+      "slide": 14,
+      "title": "Conclusion & Q&A",
+      "duration": "30 seconds",
+      "content": "Summarize the key takeaway (web search is good, but fails on conflict; our argumentation system solves this) and open the floor for questions."
+    }
+  ],
+  "script": [
+    {
+      "slide": 1,
+      "text": "Good morning, everyone. My name is Pepper, and it's a pleasure to be here. On behalf of the Zhejiang University-University of Luxembourg Joint Lab, I'll be presenting our work on 'Advancing Fact-checking for Large Language Models via Argumentative Reasoning.'"
+    },
+    {
+      "slide": 2,
+      "text": "We all know the core problem. LLMs, despite their power, have what this slide calls 'Critical Factual Drawbacks.' We know them as 'hallucinations'—producing content that is false or misleading. As the slide notes, this isn't just a technical glitch; it poses major societal challenges. But this presents a paradox: LLMs have a 'dual role.' While they *cause* the problem, they are also surprisingly good at handling *subtasks* needed for fact-checking. This is the space we're exploring."
+    },
+    {
+      "slide": 3,
+      "text": "So, what's our motivation? To be clear, as the slide says, we are *not* trying to directly solve the hallucination problem itself. Our work is focused on something more practical: conducting *online fact-checking* of an LLM's output, grounded in real-time web search. The standard approach, shown in this FacTool diagram, is a multi-step pipeline: you extract claims, generate queries, use tools to gather evidence, and finally, verify the claims."
+    },
+    {
+      "slide": 4,
+      "text": "And this tool-augmented approach shows a lot of promise. Let's look at this example. On the left, a base model confidently gets facts wrong about EMNLP and the actor Andy Lau. But on the right, when augmented with web search, the model provides precise, accurate, and sourced answers. It corrects the errors, noting EMNLP 2025 is in Suzhou and Andy Lau has won *two* Golden Horse awards for Best Actor."
+    },
+    {
+      "slide": 5,
+      "text": "It's not just for simple corrections; it also works for complex, nuanced queries. Take the question: 'Is Cheng Li an Ant director?'. A simple 'yes' or 'no' would be misleading. The web-augmented model, however, synthesizes multiple sources to build a detailed and accurate answer: he *was* a director, but his role has now changed to a non-executive one, as shown in the table."
+    },
+    {
+      "slide": 6,
+      "text": "And this augmentation isn't just for correcting errors; it can also *add value*. In this example, a user provides a fact about a Japanese pop song. The model uses web search not only to *confirm* the fact is accurate, but it also *enriches* the conversation by adding new, relevant information—that this single was a debut for one member and a graduation single for another. So, web search seems great, right?"
+    },
+    {
+      "slide": 7,
+      "text": "Well, this is the key pivot of our talk. Is simple web search enough? Unfortunately, no. It is *not* a silver bullet, because the web itself is messy. This slide outlines four major problems. You have 'Niche information' that's hard to find, 'Dynamic information' where search results are outdated, and 'Low-quality content' like spam. But most critically for our work, you have 'Conflict Among Multi-source Information.' What do you do when different, seemingly credible sources contradict each other?"
+    },
+    {
+      "slide": 8,
+      "text": "This brings us directly to our research gaps. Current methods are just too simple, and we lack good benchmarks. So, our work is driven by these three key Research Questions: First, how can we *integrate and structure* this conflicting, multi-source data? Second, how can we leverage this external evidence to *detect and adaptively correct* hallucinations? And third, how can we design *interpretable evaluation metrics* so we can actually trust the verification process?"
+    },
+    {
+      "slide": 9,
+      "text": "This leads us to our proposed solution: the Argumentation Pipeline. Let's revisit that 'Cheng Li' claim. Instead of just taking one answer, we build an 'Evidence Pool.' And as you can see, the evidence is a total mess. Sogou says yes, the official Ant Group site says no, and Sina Finance says his term *ended*. A simple model would be hopelessly confused. The core of our solution is to feed this conflicting pool into a formal 'Argumentation System' to reason over it and arrive at a single, justified verification."
+    },
+    {
+      "slide": 10,
+      "text": "Let's break down how this works. First, 'Evidence Gathering.' After extracting the initial claim, we don't just do one simple search. This diagram shows our multi-agent approach. We have a 'Pro-Agent' that tries to find evidence *supporting* the claim, and a 'Con-Agent' that actively searches for evidence *refuting* it. This iterative, adversarial process helps us build a 'Comprehensive Evidence Pool' that actually captures these real-world conflicts."
+    },
+    {
+      "slide": 11,
+      "text": "Now, we get to the brain of our system: the 'Argumentation' itself. We take those five pieces of evidence, A1 through A5. But we don't treat them all equally. We assign *Priorities*. For example, A4—the official Ant Group board list—is given a 'High' priority. In this graph, the arrows represent 'attacks.' The high-priority, more recent evidence—A4 and A5, shown in red—'attacks' and 'defeats' the older, less specific evidence, A1, 2, and 3. The system then computes which arguments are 'accepted,' which are the red nodes."
+    },
+    {
+      "slide": 12,
+      "text": "Finally, and this is crucial for interpretability, our system generates an 'Explanation'. It doesn't just output 'False.' It provides a natural language text that explains *why* it reached its conclusion, based on those winning arguments. It literally says: 'I first considered the most authoritative... source (A4)...' and that 'A5 further supports this...'. It correctly identifies that A1 and A3, while true in the past, are now 'less recent' and outdated. This makes the entire process transparent and trustworthy."
+    },
+    {
+      "slide": 13,
+      "text": "So, what's next? Our future plan is twofold. First, 'Dataset Construction.' We will build a new, large-scale benchmark that reflects these complex, real-world fact-checking tasks. Second, 'Algorithm Refinement.' We will use this new dataset to iteratively test and improve our argumentation algorithms."
+    },
+    {
+      "slide": 14,
+      "text": "To summarize: We've seen that LLM hallucinations are a critical problem. Simple web search offers a partial solution, but it fails when the web itself is full of conflicting data. Our work proposes a new pipeline that uses a formal Argumentation System to reason over this messy evidence, weigh priorities, and generate trustworthy, explainable verifications. Thank you very much for your attention. I would be happy to take any questions."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+```json
+{
+  "plan": [
+    {
+      "slide": 1,
+      "title": "Introduction",
+      "duration": "30 seconds",
+      "content": "Introduce the topic of fact-checking for large language models (LLMs) and explain why it's important in today's information landscape. Highlight the challenges LLMs face with producing accurate content."
+    },
+    {
+      "slide": 2,
+      "title": "Background: LLM Fact-Checking",
+      "duration": "45 seconds",
+      "content": "Discuss the critical factual drawbacks of LLMs, such as hallucinations, and explain the urgency for fact-checking due to the potential societal impact of misinformation."
+    },
+    {
+      "slide": 3,
+      "title": "Motivation",
+      "duration": "40 seconds",
+      "content": "Explain the motivation behind the research, focusing on the need for collecting relevant evidence and verifying its authenticity. Introduce the concept of online fact-checking grounded in real-time web search results."
+    },
+    {
+      "slide": 4,
+      "title": "Example",
+      "duration": "60 seconds",
+      "content": "Provide an example comparing the outputs of different LLMs (GPT-4.1, GPT-5) on a specific query about the location of EMNLP 2024. Highlight the discrepancies and inaccuracies in their responses."
+    },
+    {
+      "slide": 5,
+      "title": "LLM with Web Search",
+      "duration": "50 seconds",
+      "content": "Discuss how LLMs can be integrated with web search to improve fact-checking. Provide an example of a query about程立's position at蚂蚁集团 and compare the accuracy of different LLM responses."
+    },
+    {
+      "slide": 6,
+      "title": "With Web Search",
+      "duration": "40 seconds",
+      "content": "Show another example involving a query aboutANGERME's single《次々続々 / 絆島Distance / 恋のEYE-LAND》and demonstrate how web search can help verify the release date."
+    },
+    {
+      "slide": 7,
+      "title": "Web Search Challenges",
+      "duration": "45 seconds",
+      "content": "Outline the challenges associated with web search, including niche information, dynamic information, conflicting sources, and low-quality content."
+    },
+    {
+      "slide": 8,
+      "title": "Research",
+      "duration": "50 seconds",
+      "content": "Present the current research gaps, such as the lack of large-scale datasets and benchmarks, and introduce the research questions aimed at improving fact-checking methods."
+    },
+    {
+      "slide": 9,
+      "title": "Pipeline",
+      "duration": "40 seconds",
+      "content": "Describe the pipeline for fact-checking, including factual claim detection, multi-source evidence collection, formal argumentation system construction, and argumentative reasoning & explanation generation."
+    },
+    {
+      "slide": 10,
+      "title": "Method",
+      "duration": "45 seconds",
+      "content": "Explain the method used in the research, which combines automated techniques and user selection for pinpointing factual claims and conducting multi-source, real-time retrieval and evidence collection."
+    },
+    {
+      "slide": 11,
+      "title": "Argumentation",
+      "duration": "50 seconds",
+      "content": "Illustrate the argumentation process using an example involving Cheng Li's directorship at Ant Group. Show how different sources are prioritized and integrated to reach a conclusion."
+    },
+    {
+      "slide": 12,
+      "title": "Explanation",
+      "duration": "45 seconds",
+      "content": "Provide a detailed explanation of the conclusion reached in the argumentation example, emphasizing the importance of authoritative and up-to-date sources."
+    },
+    {
+      "slide": 13,
+      "title": "Plan",
+      "duration": "40 seconds",
+      "content": "Outline the future plan for the research, including dataset construction and algorithm refinement, to ensure comprehensive evaluation and iterative improvement."
+    },
+    {
+      "slide": 14,
+      "title": "Q&A",
+      "duration": "30 seconds",
+      "content": "Invite questions from the audience and conclude the presentation."
+    }
+  ],
+  "script": [
+    {
+      "slide": 1,
+      "text": "Good morning, everyone. Today, I'm excited to present our research on advancing fact-checking for large language models through argumentative reasoning. As we increasingly rely on AI-generated content, ensuring its factual accuracy has become more critical than ever. This is particularly challenging given the inherent limitations of large language models, which often produce false or misleading information known as 'hallucinations'."
+    },
+    {
+      "slide": 2,
+      "text": "The challenges posed by these hallucinations are significant. Not only do they undermine the credibility of AI systems, but they also have the potential to spread misinformation on a large scale, leading to serious societal consequences. While LLMs struggle with factual accuracy, they can still perform certain subtasks that support fact-checking. This paradox underscores the need to explore the connection between LLM factuality and fact-checking methodologies."
+    },
+    {
+      "slide": 3,
+      "text": "Our research is motivated by the core principle of fact-checking: collecting relevant evidence and verifying its authenticity. We focus on online fact-checking that leverages real-time web search results. Our approach does not aim to directly solve the LLM hallucination problem but rather to enhance the fact-checking process by integrating web search capabilities."
+    },
+    {
+      "slide": 4,
+      "text": "To illustrate the challenges faced by LLMs, let's consider an example query about the location of EMNLP 2024. GPT-4.1 and GPT-5 provided conflicting information, with GPT-5 giving a more accurate response. This discrepancy highlights the variability in LLM outputs and the need for robust fact-checking mechanisms."
+    },
+    {
+      "slide": 5,
+      "text": "Another example involves程立's position at蚂蚁集团. Different LLMs provided varying answers, with some citing outdated information. This demonstrates the importance of integrating web search to access the most current and reliable data."
+    },
+    {
+      "slide": 6,
+      "text": "Let's look at a music-related query aboutANGERME's single《次々続々 / 絆島Distance / 恋のEYE-LAND》. By using web search, we can verify the release date and other details, ensuring the accuracy of the information provided."
+    },
+    {
+      "slide": 7,
+      "text": "However, web search itself presents several challenges. Niche or professional information is often hard to find, and search engines may not always provide up-to-date results. Additionally, conflicting information from multiple sources and the presence of low-quality content can complicate the fact-checking process."
+    },
+    {
+      "slide": 8,
+      "text": "Current research in this area faces significant gaps. There is a lack of large-scale datasets and benchmarks, and existing web search-based methods are relatively simple. Our research aims to address these challenges by exploring how multi-source data retrieved by search engines can be integrated and structured to efficiently verify the factual accuracy of LLM outputs."
+    },
+    {
+      "slide": 9,
+      "text": "Our proposed pipeline for fact-checking involves several key steps: factual claim detection, multi-source evidence collection, formal argumentation system construction, and argumentative reasoning & explanation generation. This systematic approach ensures a comprehensive verification process."
+    },
+    {
+      "slide": 10,
+      "text": "The method we employ combines automated techniques with user selection to pinpoint factual claims. The system conducts multi-source, real-time retrieval and evidence collection based on previously extracted factual claims, enhancing the accuracy and reliability of the fact-checking process."
+    },
+    {
+      "slide": 11,
+      "text": "To illustrate our argumentation process, let's consider the case of Cheng Li's directorship at Ant Group. We gathered evidence from five sources, each with varying levels of priority. By analyzing and integrating this evidence, we were able to draw a well-supported conclusion."
+    },
+    {
+      "slide": 12,
+      "text": "Based on the evidence, we concluded that Cheng Li is no longer a board member of Ant Group. The most authoritative source, Ant Group's official board list, confirmed this. Other sources supported this conclusion, while less recent or less authoritative sources did not contradict it."
+    },
+    {
+      "slide": 13,
+      "text": "Looking ahead, our plan includes building a benchmark dataset that reflects real-world fact-checking tasks, covering diverse sources and claim types. We will also iteratively refine our algorithms based on test results to improve their performance and reliability."
+    },
+    {
+      "slide": 14,
+      "text": "Thank you for your attention. I now welcome any questions you may have."
+    }
+  ]
+}
+```

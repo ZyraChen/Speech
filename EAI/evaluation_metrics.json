@@ -1,0 +1,47 @@
+{
+  "content_consistency": {
+    "keyword_coverage": 0.5110294117647058,
+    "concept_coverage": 0.275,
+    "slide_title_coverage": 0.42857142857142855,
+    "fact_accuracy": 0.4838709677419355,
+    "hallucination_risk_score": 0.6222826086956522,
+    "overall_score": 0.4152378398764835
+  },
+  "structure": {
+    "coherence_score": 1.0,
+    "time_balance_score": 0.7257738159839582,
+    "transition_score": 0.38461538461538464,
+    "organization_score": 1.0,
+    "overall_score": 0.7775973001498357
+  },
+  "language_quality": {
+    "clarity_score": 0.9996951219512195,
+    "conversational_score": 0.8371134020618556,
+    "vocabulary_richness": 1.0,
+    "professionalism_score": 1.0,
+    "overall_score": 0.9592021310032688
+  },
+  "detail_richness": {
+    "expansion_ratio_score": 0.9120827456511519,
+    "example_usage_score": 1.0,
+    "explanation_quality": 0.21428571428571427,
+    "context_provision": 1.0,
+    "overall_score": 0.7815921149842165
+  },
+  "time_management": {
+    "total_minutes": 12.5,
+    "duration_appropriateness": 0.8928571428571429,
+    "time_distribution_score": 0.6666666666666666,
+    "pace_consistency": 1.0,
+    "overall_score": 0.8531746031746031
+  },
+  "overall_score": 0.7133673807661507,
+  "grade": "C+ (中等)",
+  "weights": {
+    "content_consistency": 0.3,
+    "structure": 0.25,
+    "language_quality": 0.2,
+    "detail_richness": 0.15,
+    "time_management": 0.1
+  }
+}

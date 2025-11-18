@@ -1,0 +1,123 @@
+
+--- Page 1 ---
+Advancing Fact-checking for Large Language Models
+via Argumentative Reasoning
+Zhaoqun Li
+1
+
+--- Page 2 ---
+Background: LLM fact-checking
+• Critical Factual Drawbacks
+Large language models (LLMs) inherently tend to produce false, wrong, or
+misleading content—known as "hallucinations“
+• Urgency for Fact-Checking
+Such issues bring major societal challenges, as they may deceive users and
+spread misinformation on a large scale.
+• Dual Role of LLMs in Fact-Checking
+While LLMs themselves struggle with factual accuracy, they can handle some
+subtasks that support fact-checking. This paradox highlights the necessity of
+exploring the connection between LLM factuality and fact-checking.
+Augenstein et al. (2024),Factuality challenges in the era of large language models and
+opportunities for fact-checking, Nature Machine Intelligence
+
+--- Page 3 ---
+Motivation
+• The core of fact-checking an assertion lies in collecting
+relevant evidence and verifying its authenticity.
+Note: We do not attempt to directly solve the LLM
+hallucination problem.
+• Our work focuses on conducting online fact-checking that
+is grounded in real-time web search results
+Chern et al. (2023), FacTool: Factuality Detection in Generative AI, arXiv:2307.13528.
+
+--- Page 4 ---
+Example
+
+--- Page 5 ---
+LLM with web search
+
+--- Page 6 ---
+With web search
+
+--- Page 7 ---
+Web search
+1. Niche Information
+Search engines focus on popular content, so niche or professional info is hard to find. Valuable info on
+small blogs/forums can't be fully collected by search tools.
+2. Dynamic Information
+Search results aren't always up-to-date. Old info on policies/tech docs may still show up because
+sources and search engines don't update in time.
+3. Conflict Among Multi-source Information
+Online information comes from various sources. Unofficial sources may conflict with official/academic
+ones, and media often present biased content, resulting in conflicting search results.
+4. Interference from Low-quality Content
+Repetitive, useless content and ads fill search results.
+
+--- Page 8 ---
+Research
+Current Research
+• Lack of large-scale datasets and benchmarks
+• Current web search-based methods are relatively simple
+Research question
+• How can multi-source data retrieved by search engines be integrated and structured to
+efficiently verify the factuality of LLM outputs?
+• How can external retrieval evidence be leveraged to automatically detect and adaptively
+correct hallucinations in LLM outputs, thereby improving the truthfulness and reliability
+of generated content?
+• How can dynamic fact-checking datasets and interpretable evaluation metrics be
+designed for search scenarios to enable systematic, traceable, and trustworthy fact
+verification?
+
+--- Page 9 ---
+Pipeline
+• Factual Claim Detection
+• Multi-source Evidence Collection
+• Formal Argumentation System Construction
+• Argumentative Reasoning & Explanation Generation
+
+--- Page 10 ---
+Method
+• Both automated techniques and user selection are essential for
+pinpointing the factual claims
+• The system conducts multi-source, real-time retrieval and evidence
+collection based on the previously extracted factual claims.
+
+--- Page 11 ---
+Argumentation
+Suppose we have five sources of evidence from search results:
+• A1: Sogou Baike: Cheng Li became a director of Ant Group Co., Ltd. in August 2020.
+Priority: Medium.
+• A2: Wikipedia: Cheng Li previously served as CTO of Ant Financial.
+Priority: Medium.
+• A3: Tianyancha: Cheng Li was a non-executive director.
+Priority: Medium.
+• A4: Ant Group's official board list does not include Cheng Li.
+Priority: High.
+• A5: Sina Finance reports that Cheng Li's term as director ended in January 2023.
+Priority: Medium.
+
+--- Page 12 ---
+Explanation
+Here are the facts retrieved from different sources:
+A1: Sogou Baike states that Cheng Li became a director of Ant Group in August 2020.
+A2: Wikipedia notes that Cheng Li previously served as CTO of Ant Financial.
+A3: Tianyancha reports that Cheng Li was a non-executive director.
+A4: Ant Group’s official board list does not include Cheng Li.
+A5: Sina Finance reports that Cheng Li’s term as director ended in January 2023.
+Based on these facts, I first considered the most authoritative and up-to-date source—Ant
+Group’s official board list (A4)—which shows that Cheng Li is not currently a board member.
+This was not contradicted by any other high-priority evidence. While sources like A1, A2, and
+A3 confirm that Cheng Li held director or executive roles in the past, their information is less
+recent. A5 further supports the conclusion by stating that Cheng Li’s term ended in January
+2023. Therefore, I conclude that Cheng Li is no longer a board member of Ant Group.
+
+--- Page 13 ---
+Plan
+• Dataset Construction
+We will build a benchmark that reflects real-world fact-checking tasks, ensuring
+they cover diverse sources and claim types for comprehensive evaluation
+• Algorithm Refinement
+We will iteratively improve our algorithms based on test results
+
+--- Page 14 ---
+Q & A
