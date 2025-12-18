@@ -321,7 +321,7 @@ def main():
         pdf_path=pdf_path,
         json_path=json_path,
         use_gpt=True,
-        openai_api_key="sk-8faa7214041347609e67d5d09cec7266",
+        openai_api_key="YOUR_API_KEY",
         openai_base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
         lang='en'  # 'en'表示英文，'zh'表示中文
     )
