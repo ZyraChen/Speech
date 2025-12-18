@@ -524,7 +524,7 @@ def run_qwen_evaluation(api_key: str, slides_path: str, speech_path: str):
 if __name__ == "__main__":
 
 
-    api_key = "sk-8faa7214041347609e67d5d09cec7266"
+    api_key = "YOUR_API_KEY"
     run_qwen_evaluation(
     api_key=api_key,
     slides_path="presentation.pdf",
