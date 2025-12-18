@@ -341,7 +341,7 @@ b.每一页slide对应的演讲稿文本内容的分点列表:script:slide,text"
 
 def main():
     # 设置API密钥
-    API_KEY = "sk-8faa7214041347609e67d5d09cec7266"
+    API_KEY = "YOUR_API_KEY"
     # 创建生成器
     generator = SlideToSpeechGenerator(API_KEY)
     
